@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			html body {
+				font-family: arial,sans-serif;
+				font-size: 62.5%;
+				text-align: left;
+				color: #000;
+			}
+			
+			.column {
+				float: left;
+				border-left: 1px solid #818181;
+				border-bottom: 1px solid #818181;
+				background-color: #ddd;
+			}
+			
+			#firstColumn {
+				border-left: none;
+			}
+			
+			.selectedColumn {
+				border-bottom: none;
+				background-color: #fff;
+			}
+			
+			h3 {
+				text-transform: uppercase;
+				margin: 10px;
+				font-size: 12px;
+				font-weight: normal;
+			}
+			
+			#tabsContainer {
+				border: 1px solid #818181;
+				float: left;
+			}
+			
+			ul {
+				list-style: none;
+				margin: 5px 14px 10px 18px;
+				padding: 0;
+				float: left;
+				clear: both;
+			}
+			
+			ul li {
+				font-size: 12px;
+			}
+			
+			.hide {
+				display: none;
+			}
+			
+			.wrap {
+				display: block;
+			}
+			
+			.lightBox {
+				left: 45%;
+				top: 50%;
+				width: 200px;
+				height: auto;
+				background-color: #000;
+				opacity: 0.9;
+				-webkit-border-radius: 5px;
+				-mozilla-border-radius: 5px;
+				border-radius: 5px;
+				font-size: 11px;
+				font-weight: normal;
+				color: #fff;
+				z-index: 99999999;
+				position: absolute;
+				text-align: center;
+				padding: 0 5px;
+			}
+			
+			.lightBox h4 {
+				margin: 5px 0;
+			}
+			
+			.singleRuleDividerRed {
+				border-bottom: 2px solid red;
+			}
+			
+			.messageDiv {
+				padding: 15px;
+			}
+		</style>
+		<script language="javascript" src="file:///C:/Users/sushal/Desktop/jquery-1.6.2.min.js"></script>
+		
+		<script language="javascript">
+		$(function() {
+			var lightBoxDiv = $('<div class="lightBox"><h4>This is a lightbox</h4><div class="singleRuleDividerRed" /><div class="messageDiv">First Column is selected</div></div>');
+			$("#tabsContainer").append(lightBoxDiv);
+			$("#firstColumn").click(function() {
+				console.log("First Tab Selected");
+				$(".allTabs").addClass("hide");
+				$("#firstTab").removeClass("hide");
+				$(".column").removeClass("selectedColumn");
+				$(this).addClass("selectedColumn");
+				$(".messageDiv").text("You Selected First Column");
+			});
+			
+			$("#secondColumn").click(function() {
+				console.log("Second Tab Selected");
+				$(".allTabs").addClass("hide");
+				$("#secondTab").removeClass("hide");
+				$(".column").removeClass("selectedColumn");
+				$(this).addClass("selectedColumn");
+				$(".messageDiv").text("You Selected Second Column");
+			});
+			
+			$("#thirdColumn").click(function() {
+				console.log("Last Tab Selected");
+				$(".allTabs").addClass("hide");
+				$("#lastTab").removeClass("hide");
+				$(".column").removeClass("selectedColumn");
+				$(this).addClass("selectedColumn");
+				$(".messageDiv").text("You Selected Third Column");
+			});
+			
+		});
+		</script>
+	</head>
+	<body>
+		<h1>Put in the tabs here</h1>
+		<div id="tabsContainer" class="wrap">
+			<div id="firstColumn" class="column selectedColumn">
+				<h3>Most Popular</h3>
+			</div>
+			<div id="secondColumn" class="column">
+				<h3>Most Emailed</h3>
+			</div>
+			<div id="thirdColumn" class="column">
+				<h3>Most Blogged</h3>
+			</div>
+			<ul id="firstTab" class="allTabs">
+				<li>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</li>
+				<li>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</li>
+				<li>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</li>
+				<li>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</li>
+				<li>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</li>
+				<li>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</li>
+				<li>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</li>
+			</ul>
+			<ul id="secondTab" class="allTabs hide">
+				<li>Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</li>
+				<li>Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</li>
+				<li>Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</li>
+				<li>Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</li>
+				<li>Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</li>
+				<li>Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</li>
+				<li>Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</li>
+			</ul>
+			<ul id="lastTab" class="allTabs hide">
+				<li>Do Re Me So Fa La Ti So</li>
+				<li>Do Re Me So Fa La Ti So</li>
+				<li>Do Re Me So Fa La Ti So</li>
+				<li>Do Re Me So Fa La Ti So</li>
+				<li>Do Re Me So Fa La Ti So</li>
+				<li>Do Re Me So Fa La Ti So</li>
+				<li>Do Re Me So Fa La Ti So</li>
+			</ul>
+		</div>
+	</body>
+</html>
