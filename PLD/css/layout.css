@@ -1,0 +1,57 @@
+#shell {
+  width: 980px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#page {
+  padding: 0;
+  margin-top: 15px;
+}
+
+#main {
+  clear: both;
+  padding: 22px 0 7px 0;
+  background-color: #fff;
+}
+
+.subColumn-2:after,
+.subColumn-3:after,
+.wrap:after  {
+  content: "."; 
+  display: block; 
+  height: 0;
+  clear: both; 
+  visibility: hidden;
+}
+
+.subColumn-3 {
+  background: transparent url("../images/subColumn3.gif") repeat-y scroll left top;
+}
+
+.column {
+  float: left;
+  margin: 0 9px;
+  font-size: 12px;
+}
+
+.firstColumn {
+  margin-left: 0;
+  border-left: none;
+}
+
+.lastColumn {
+  margin-right: 0;
+}
+
+.subColumn-3 .column {
+  width: 295px;
+}
+
+.subColumn-3 .lastColumn {
+  width: 296px;
+}
+
+.subColumn-2 .column {
+  width: 453px;
+}

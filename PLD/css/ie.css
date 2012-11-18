@@ -1,0 +1,10 @@
+/* clearfix related for ie */
+.subColumn-2, 
+.subColumn-3,
+.wrap {
+  *display: inline-block; /* IE8 ignores this */
+}
+
+* + html .kicker {
+  margin-top: -32px; /* Only for IE7 */
+}
